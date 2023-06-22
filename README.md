@@ -19,7 +19,7 @@
 ```css
 .myheader{
     height: 100vh;
-    background-image: url("sf_slide.png");
+    background-image: url("bg.png");
     background-size: cover;
 }
 ```
