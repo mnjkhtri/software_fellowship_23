@@ -28,6 +28,3 @@ def delete():
         print(todo_id)
         todos.delete_one({"_id":ObjectId(todo_id)})
         return redirect(url_for('home'))
-    
-if __name__=="__main__":
-    app.run(debug=True)
