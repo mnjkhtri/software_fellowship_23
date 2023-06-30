@@ -12,14 +12,14 @@ except Exception as e:
     
 def save_to_todos(todos):
     with open('todos.json', 'w') as f:
-        json.dump(todos, f)
+        json.dump(todos, f, indent=4)
         
 @app.route('/', methods = ['GET', 'POST'])
 def index():
     if request.method == 'POST':
         content = request.form['content']
         important = 'important' in request.form
-        todos.update({int(time.time()):{'_id':int(time.time()),'content':content, 'important':important}}) 
+        todos[str(int(time.time()))] = {'_id':str(int(time.time())),'content':content, 'important':important}
         save_to_todos(todos)
         return redirect(url_for('index'))
     all_todos = todos.values()
