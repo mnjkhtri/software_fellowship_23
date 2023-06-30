@@ -1,0 +1,8 @@
+{
+
+  "transition": "slide",
+  "start_slideshow_at": "selected",
+  "overlay": "<div class='myheader'></div>",
+  "header": "<h1>Hello</h1>",
+  "footer": "<h3>World!</h3>"
+}

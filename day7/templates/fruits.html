@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My fruits page
+{% endblock title%}
+
+{% block body %}
+<h1> This contains all the fruits</h1>
+<ul>
+{% for i in fruits %}
+<li>{{i}}</li>
+{% endfor %}
+</ul>
+
+<form  action= "" method="post">
+    <label for ="fruit-id"> Add fruit </label>
+    <input type = "text" name = "fruit" id="fruit-id"> 
+    <input type = "submit" name ="btn" >
+</form>
+{% endblock body %}

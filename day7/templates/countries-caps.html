@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My countries-caps page
+{% endblock title%}
+
+{% block body %}
+<h1> This contains countries and capitals</h1>
+<ul>
+{% for key,value in countries_caps.items() %}
+<li>{{key}}-->{{value}}</li>
+{% endfor %}
+</ul>
+<a href="{{ url_for('my_fruits_page') }}">Go to fruits page.</a><br>
+<a href="{{ url_for('home_page') }}">Go to home page.</a>
+{% endblock body %}
