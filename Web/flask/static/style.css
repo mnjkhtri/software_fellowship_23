@@ -1,0 +1,13 @@
+.todo {
+padding: 20px;
+margin: 10px;
+background-color: #eee;
+}
+.imp{
+    background-color:blue;
+    color: white;
+}
+
+.completed{
+    text-decoration: line-through;
+}

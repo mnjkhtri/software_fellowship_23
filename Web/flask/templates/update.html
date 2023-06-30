@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form method="post" action = "{{url_for('update_todo', id=todo['_id'])}}">
+        <p>
+            <b><label for="content">Todo content</label></b>
+        </p>
+        <p>
+            <input type="text" name="content"
+                placeholder="Todo Content" value= "{{todo.content}}"></input>
+        </p>
+        <p>
+            {% if todo['important'] %}
+            <input id="important" name="important" type="checkbox" checked>
+            {% else %}
+            <input id="important" name="important" type="checkbox">
+            {% endif %}
+            <label for="important">Important</label>
+        </p>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock content %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block head %}
+<link
+    rel="stylesheet"
+    href="{{url_for('static', filename='style.css')}}"
+/>
+{% endblock head %}
+{% block title %}
+Todos
+{% endblock title %}
+{% block content %}
+    <h1>FlaskTODO</h1>
+    <hr>
+    <div class="content">
+    <form method="post" action = '/'>
+        <p>
+            <b><label for="content">Todo content</label></b>
+        </p>
+        <p>
+            <input type="text" name="content"
+                placeholder="Todo Content"></input>
+        </p>
+
+        <p>
+            <b><label for="degree">Degree</label></b>
+        </p>
+        <p>
+            <input id="degree-0" name="important" type="checkbox" value="Important">
+            <label for="degree-0">Important</label>
+        </p>
+        <button type="submit">Submit</button>
+
+    </form>
+    <hr>
+    {% for todo in todos %}
+        <div class="todo {{ 'imp' if todo['important']}} {{'completed' if todo['completed']}}">
+            <p>{{ todo['content'] }}</p>
+            <form action="{{url_for('delete_todo', id = todo['_id'])}}" method="post">
+                <input type="submit" value="Delete Todo"
+                                    onclick="return confirm('Are you sure you want to delete this entry?')">
+            </form>
+            <form action="{{url_for('update_todo', id = todo['_id'])}}" method="get">
+                <input type="submit" value="Update Todo"
+                                    onclick="return confirm('Are you sure you want to update this entry?')">
+            </form>
+            {% if todo['completed'] %}
+            <form action="{{url_for('mark_uncompleted', id = todo['_id'])}}" method="post">
+                <input type="submit" value="Mark Uncompleted"
+                                    onclick="return confirm('Are you sure you want to unmark this entry?')">
+            </form>
+            {% else %}
+            <form action="{{url_for('mark_completed', id = todo['_id'])}}" method="post">
+                <input type="submit" value="Mark Completed"
+                                    onclick="return confirm('Are you sure you want to mark this entry?')">
+            </form>
+            {% endif %}
+        </div>
+    {% endfor %}
+    </div>
+{% endblock content %}

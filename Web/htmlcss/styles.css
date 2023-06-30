@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: underline;
+}
+
+/* Nav bar code start */
+nav {
+  height: 60px;
+  background-color: #333333;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.nav-link {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 10px;
+  text-decoration: none;
+}
+/* Nav bar code end *
+
+/* Splash screen code start */
+section {
+  height: 45vh;
+  padding-top: 200px;
+  text-align: center;
+  font-size: 20px;
+}
+
+#splash h1 {
+  font-size: 35px;
+  font-weight: 300;
+}
+
+#splash h2 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+#user-image {
+  width: 300px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+/* Splash screen code end */
+
+/* About screen code start */
+.container {
+  width: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+p {
+  text-align: justify;
+  margin: 10px;
+}
+/* About screen code end */
+
+/* Education screen code start */
+#education {
+  position: relative;
+}
+.left {
+  position: absolute;
+  left: 35%;
+}
+.right {
+  position: absolute;
+  right: 35%;
+}
+li {
+  text-align: initial;
+}
+.inner-li-item {
+  margin-left: 25px;
+}
+/* Education screen code end */
+
+/* Footer section code start */
+footer {
+  background-color: #333333;
+  color: white;
+  padding: 50px 100px 90px 50px;
+}
+footer h1 {
+  font-size: 50px;
+}
+button {
+  outline: none;
+  height: 50px;
+  width: 200px;
+  background-color: aqua;
+  font-weight: bold;
+}
+input {
+  width: 500px;
+  height: 54px;
+}
+textarea {
+  width: 500px;
+}
+/* Footer section code end */
