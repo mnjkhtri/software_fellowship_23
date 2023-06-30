@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOS</title>
+</head>
+<body>
+    {%if todos %}
+        {% for todo in todos %}
+            <div id="{{todo._id}}">
+                <p>{{todo.content}}</p>
+                <form method="post" action="{{ url_for('delete') }}">
+                    <button type="submit">Delete</button>
+                    <input type="hidden" name="todo_id" value="{{todo._id}}" ></input>
+                </form>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h1>No todos for now.</h1>
+    {% endif %}
+    <hr>
+    <hr>
+    <h1>
+        ADD todos:
+    </h1>
+    <form method="post" action="{{ url_for('home') }}">
+        <p>
+            <b><label for="content">Todo content</label></b>
+        </p>
+        <p><input type="text" name="content" placeholder="Todo Content" required></input>
+        </p>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
